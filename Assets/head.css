@@ -11,5 +11,9 @@
 }
 
 .headerTable{
-	
+	width: 800px;
+}
+
+.headerTD{
+	text-align: center;
 }
