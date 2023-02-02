@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset = "utf-8">
+		
+	<!-- Load Google APIs jQuery lib -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		
+	<!-- Link to applicable stylesheets -->
+	<link rel = "stylesheet" href = "Assets/head.css">
+	
+	<!-- Utilize jQuery to load headerHTML.html in place of div with #header -->
+	<script>
+		  $(function(){
+			$("#header").load("headerHTML.html");
+		  });
+	</script>
+	
+    <title>
+      Josh's Programming Portfolio - Apps Page
+    </title>
+</head>
+<body>
+	<!-- Load headerHTML.html using #header-->
+	<div id = "header"></div>
+</body>
+</html>
