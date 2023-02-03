@@ -3,20 +3,20 @@
 #header{
 	border: thin;
 	border-bottom-style: solid;
-	border-color: #b3b3b3;
-	background-color: white;
+	border-color: #000000;
+	background-color: #333333;
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	right: 0px;
 	width: 100%;
 	margin: 0px;
+	height: 8vh;
 }
 
 .headerTable{
 	width: 20%;
-	height: 10vh;
-	font-color: #000000;
-	font-weight: bold;
+	height: 8vh;
 	display: inline-table;
 	padding: 1px;
 }
@@ -25,23 +25,21 @@
 	text-align: center;
 	border: thin;
 	border-right-style: solid;
-	border-color: #b3b3b3;
-}
-
-.indexBody{
-	top: 0px;
-	background-color: #0051ff;
+	border-color: #000000;
+	font-color: #ffffff;
+	font-weight: bold;
 }
 
 .headerLogo{
-	height: 8vh;
+	height: 6vh;
+	margin-left: 1vh;
+	margin-right: 1vh;
 }
 
 .logoTable{
 	float: right;
-	width: 8vh;
 	display: inline-table;
-	margin: 1vh;
+	margin-left: 0px;
 	padding: 0px;
 }
 
@@ -49,6 +47,6 @@
 	text-align: center;
 	border: thin;
 	border-left-style: solid;
-	border-color: #b3b3b3;
+	border-color: #000000;
 	
 }
