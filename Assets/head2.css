@@ -5,29 +5,50 @@
 	border-bottom-style: solid;
 	border-color: #b3b3b3;
 	background-color: white;
-	padding: 1px;
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	width: 100%;
+	margin: 0px;
 }
 
 .headerTable{
 	width: 20%;
-	height: 5%;
+	height: 10vh;
 	font-color: #000000;
 	font-weight: bold;
+	display: inline-table;
+	padding: 1px;
 }
 
 .headerTD{
 	text-align: center;
-	width: 5%;
 	border: thin;
 	border-right-style: solid;
 	border-color: #b3b3b3;
 }
 
-body{
+.indexBody{
 	top: 0px;
 	background-color: #0051ff;
+}
+
+.headerLogo{
+	height: 8vh;
+}
+
+.logoTable{
+	float: right;
+	width: 8vh;
+	display: inline-table;
+	margin: 1vh;
+	padding: 0px;
+}
+
+.logoTD{
+	text-align: center;
+	border: thin;
+	border-left-style: solid;
+	border-color: #b3b3b3;
+	
 }
