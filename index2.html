@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		
+		<!-- Load Google APIs jQuery lib -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+			
+		<!-- Link to applicable stylesheets -->
+		<link rel = "stylesheet" href = "Assets/head2.css">
+	
+		<!-- Utilize jQuery to load headerHTML.html in place of div with #header -->
+		<script>
+			$(function(){
+				$("#header").load("headerHTML2.html");
+				$("#footer").load("footerHTML.html");
+		  	});
+		</script>
+    	<title>
+      		Josh Kinnes - Home
+    	</title>
+	</head>
+
+	<body>
+		
+		<div id = "header"></div>
+		
+	</body>
+</html>

@@ -1,0 +1,37 @@
+/* Document for CSS specific to page common header */
+
+#header{
+	border: thin;
+	border-bottom-style: solid;
+	border-color: #b3b3b3;
+	background-color: white;
+	padding: 1px;
+	position: absolute;
+	top: 0px;
+	left:0px;
+}
+
+.headerImage{
+	
+}
+
+.headerTable{
+	top: 0px;
+	width: 20%;
+	height: 5%;
+	font-color: #000000;
+	font-weight: bold;
+}
+
+.headerTD{
+	text-align: center;
+	width: 5%;
+	border: thin;
+	border-right-style: solid;
+	border-color: #b3b3b3;
+}
+
+body{
+	top: 0px;
+	background-color: #0051ff;
+}
