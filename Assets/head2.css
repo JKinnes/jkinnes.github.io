@@ -19,15 +19,20 @@
 	height: 8vh;
 	display: inline-table;
 	padding: 1px;
+	font-color: #ffffff;
 }
 
 .headerTD{
 	text-align: center;
 	border: thin;
 	border-right-style: solid;
-	border-color: #000000;
-	font-color: #ffffff;
+	border-color: #ffffff;
 	font-weight: bold;
+	font-color: #ffffff;
+}
+
+.headerA{
+	font-color: #ffffff;
 }
 
 .headerLogo{
