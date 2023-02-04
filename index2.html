@@ -5,10 +5,13 @@
 		
 		<!-- Load Google APIs jQuery lib -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<!-- Load index page javascript file -->
+		<script type = "text/javascript" src="Assets/index.js"></script>
 			
 		<!-- Link to applicable stylesheets -->
 		<link rel = "stylesheet" href = "Assets/head2.css">
 		<link rel = "stylesheet" href = "Assets/site2.css">
+		<link rel = "stylesheet" href = "Assets/index.css">
 	
 		<!-- Utilize jQuery to load headerHTML.html in place of div with #header -->
 		<script>
@@ -25,6 +28,10 @@
 	<body class = "indexBody">
 		
 	<div id = "header"></div>
-		
-	</body>
+	
+	<div id = "greeting">
+		<h1 id = "indexGreeting" onload = "getTime();"> <!-- CURRENT ISSUE IS GETTING TIMESTAMP TO LOAD. JS WORKS WHEN IN SCRIP TTAGE, BUT NOT WHEN CALLED -->
+		</h1>		
+	</div>
+</body>
 </html>
