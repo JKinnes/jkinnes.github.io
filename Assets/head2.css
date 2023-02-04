@@ -4,21 +4,23 @@
 	border: thin;
 	border-bottom-style: solid;
 	border-color: #000000;
-	background-color: #333333;
+	background-color: #808080;
+	font-color: #ffffff;
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	right: 0px;
 	width: 100%;
+	font-size: 16pt;
 	margin: 0px;
-	height: 8vh;
+	height: 2em;
+	padding: 0px;
 }
 
 .headerTable{
 	width: 20%;
-	height: 8vh;
+	height: 2em;
 	display: inline-table;
-	padding: 1px;
 	font-color: #ffffff;
 }
 
@@ -26,17 +28,17 @@
 	text-align: center;
 	border: thin;
 	border-right-style: solid;
-	border-color: #ffffff;
+	border-color: #000000;
 	font-weight: bold;
 	font-color: #ffffff;
 }
 
 .headerA{
-	font-color: #ffffff;
+	color: #2E3192;
 }
 
 .headerLogo{
-	height: 6vh;
+	height: 1.5em;
 	margin-left: 1vh;
 	margin-right: 1vh;
 }
