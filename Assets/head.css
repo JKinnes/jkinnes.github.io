@@ -1,18 +1,13 @@
-/* Document for CSS specific to page common header */
-
-#header{
-  /*margin: auto;
-  width: 50%;*/
-}
-
-.headerImage{
-	
-}
-
 .headerTable{
 	width: 800px;
 }
 
 .headerTD{
 	text-align: center;
+}
+
+body{
+	left: 240px;
+	position: absolute;
+	background-color: #008CFF;
 }
