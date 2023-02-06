@@ -4,6 +4,12 @@
 	height: 10em;
 }
 
+#aboutTable{	
+	background-image: url("Images/myBackground.png");
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
 .aboutDiv{
 	text-align: left;
 	display:table-row;
@@ -27,4 +33,7 @@
 #NUWC{
 	float:right;
 	margin-left: 1vw;
+}
+
+p{
 }

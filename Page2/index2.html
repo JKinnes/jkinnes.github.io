@@ -33,7 +33,7 @@
 	<div id = "greeting">
 		<h1 id = "indexGreeting" onload = "getTime();"> <!-- CURRENT ISSUE IS GETTING TIMESTAMP TO LOAD. JS WORKS WHEN IN SCRIP TTAGE, BUT NOT WHEN CALLED -->
 		</h1>
-		<script>function getTime(){
+		<script>
 	let dayPart = new String("");
 	var date = new Date();
 	var time = date.getHours();
@@ -47,7 +47,7 @@
 		dayPart = "Evening.";
 	}
 	document.getElementById("indexGreeting").innerHTML = ("Good " + dayPart);
-}</script>		
+</script>		
 	</div>
 </body>
 </html>
