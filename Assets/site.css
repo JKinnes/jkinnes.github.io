@@ -1,2 +1,15 @@
 /* CSS Document */
 
+body{	
+	background-color: #008CFF;
+}
+
+#bodyDiv{
+	margin: auto;
+	width: 800px;
+	padding: 0px;
+}
+
+a {
+	color: inherit;
+}

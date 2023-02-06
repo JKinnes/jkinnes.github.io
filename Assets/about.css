@@ -1,0 +1,30 @@
+/* CSS Document */
+
+.aboutImage{
+	height: 10em;
+}
+
+.aboutDiv{
+	text-align: left;
+	display:table-row;
+}
+
+#Highschool{
+	float:left;
+	margin-right: 1vw;
+}
+
+#Military{
+	float:right;
+	margin-left: 1vw;
+}
+
+#College{
+	float:left;	
+	margin-right: 1vw;
+}
+
+#NUWC{
+	float:right;
+	margin-left: 1vw;
+}

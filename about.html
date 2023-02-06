@@ -1,7 +1,4 @@
-<!doctype html>
-<!--
-	About page for CSC106 personal website. Current test page for new features. 
--->
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset = "utf-8">
@@ -11,6 +8,9 @@
 		
 	<!-- Link to applicable stylesheets -->
 	<link rel = "stylesheet" href = "Assets/head.css">
+	<link rel = "stylesheet" href = "Assets/site.css">
+	<link rel = "stylesheet" href = "Assets/about.css">
+	
 	
 	<!-- Utilize jQuery to load headerHTML.html in place of div with #header -->
 	<script>
@@ -24,16 +24,46 @@
     </title>
 </head>
 <body>	
-	<!-- Load headerHTML.html using #header-->
-	<div id = "header"></div>
-	<p>
-		Joshua Kinnes is an Engineering Technician IV employed by MIKEL Inc. supporting test and evaluation efforts for the NUWC Newport Trident LCSF. 
-		<br>
-		He worked previously as a Logistician for MIKEL insupport of the NAVSUP CPGH depot and spent 6 years serving as a 15T UH-60 Black Hawk Helicopter maintainer and crew chief in the Rhode Island Army National Guard. 
-		<br>
-		He deployed to Iraq and Kuwait in 2017 in support of Operation Inherent Resolve / Operation Spartan Shield, gaining hundreds of hours in maintenance experience across multiple Army aviation platforms.
-		<br>
-		His time since separation from the Army has been spent gaining experience in the test, evaluation, and maintenance of Ohio class submarine combat systems
-	</p>
+	<div id = "bodyDiv">
+		<!-- Load headerHTML.html using #header-->
+		<div id = "header"></div>
+	
+		<div>
+		<table>
+			<tr>
+			<div class = "aboutDiv">
+				<img class = "aboutImage" id = "Highschool" src = "Assets/joshKinnes.png" alt = "Josh sitting in fire pit">
+				<p>
+					Throughout high school, Josh spent most of his time on the North Kingstown Senior High School's robotics team, learning the basics of both engineering anbd programming. In his senior year, he was appointed lead programmer of FIRST Tech Challenge team 6527. This team would go on to place third in the 2016 Rhode Island FIRST Tech Challenge state competition, and secure a spot at the East Super Regional tournament in Scranton, Pennsylvania. This experience was instrumental in helping to set Josh on the path he is pursuing today.
+				</p>
+			</div>
+			</tr>
+			<tr>
+			<div class = "aboutDiv">
+				<img class = "aboutImage" id = "Military" src = "Assets/range.png" alt = "Josh at firing range">
+				<p>
+					Shortly after graduating high school, Josh enlisted into the Rhode Island Army National Guard as a 15T UH-60 Black Hawk repairer. In 2017, He deployed with 1-126 General Support Aviation Batallion (GSAB) in support of Operations Inherent Resolve and Spartan Shield in both Kuwait and Iraq. In 2020, when the COVID-19 pandemic was at its peak, Josh supported Task Force Guardian within the Rhode Island National Guard to provide aid, care, and immunization support. In early 2022, he attended the Noncomissioned Officer Academy at Ft. Dix, New Jersey and obtained the rank of Sergeant before leaving the Guard in June of that year.
+				</p>
+			</div>
+			</tr>
+			<tr>
+			<div  class = "aboutDiv">
+				<img class = "aboutImage" id = "College" src = "Assets/NEIT.png" alt = "NEIT Logo">
+				<p>
+					After returning from his deployment in 2018, Josh began to make arrangements to begin studying Advanced Automotive Technology at New Ingland Institute of Technology in fall 2019.
+				</p>
+			</div>
+			</tr>
+			<tr>
+			<div  class = "aboutDiv">
+				<img class = "aboutImage" id = "NUWC" src = "Assets/nuwc.png" alt = "NUWC Logo">
+				<p>
+				</p>
+			</div>
+			</tr>
+		</table>
+		</div>		
+		
+	</div>
 </body>
 </html>
