@@ -1,6 +1,11 @@
 /* CSS Document */
 #greeting{
 	position: absolute;
-	top: 45vh;
+	top: 15vh;
 	left: 25vh;
+}
+
+#indexGreeting{
+	font-size: 150px;
+	height: 5vh;
 }
