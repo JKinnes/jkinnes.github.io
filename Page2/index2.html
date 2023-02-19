@@ -19,7 +19,6 @@
 				$("#header").load("headerHTML2.html");
 				$("#footer").load("footerHTML.html");
 		  	});
-			
 		</script>
     	<title>
       		Josh Kinnes - Home
@@ -31,23 +30,25 @@
 	<div id = "header"></div>
 	
 	<div id = "greeting">
-		<h1 id = "indexGreeting" onload = "getTime();"> <!-- CURRENT ISSUE IS GETTING TIMESTAMP TO LOAD. JS WORKS WHEN IN SCRIP TTAGE, BUT NOT WHEN CALLED -->
-		</h1>
+		
+		<h1 id = "indexGreeting"></h1>
+		
 		<script>
-	let dayPart = new String("");
-	var date = new Date();
-	var time = date.getHours();
-	if (0 <= time && time < 5 ){
-		dayPart = "Night.";
-	} else if (5 <= time && time < 12){
-		dayPart = "Morning.";
-	} else if (12<= time && time < 17){
-		dayPart = "Afternoon.";
-	} else if (17 <= time && time < 21){
-		dayPart = "Evening.";
-	} 
-	document.getElementById("indexGreeting").innerHTML = ("Good " + dayPart);
-</script>		
+			let dayPart = new String("");
+			var date = new Date();
+			var time = date.getHours();
+			
+			if (0 <= time && time < 12){
+					dayPart = "Morning.";
+			} else if (12<= time && time < 17){
+					dayPart = "Afternoon.";
+			} else if (17 <= time){
+					dayPart = "Evening.";
+			}
+			
+			document.getElementById("indexGreeting").innerHTML = ("Good " + dayPart);
+		</script>		
+		<h1 id = "stay">Please, stay a while.</h1>
 	</div>
 </body>
 </html>

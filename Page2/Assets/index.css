@@ -6,6 +6,11 @@
 }
 
 #indexGreeting{
-	font-size: 150px;
+	font-size: 15vh;
 	height: 5vh;
+}
+
+#stay{
+	margin-top: 1vh;
+	margin-left: 15vw;
 }
