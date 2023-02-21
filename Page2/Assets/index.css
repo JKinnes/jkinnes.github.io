@@ -12,5 +12,20 @@
 
 #stay{
 	margin-top: 1vh;
-	margin-left: 15vw;
+	margin-left: 6vw;
+	font-size: 7.5vh;
+}
+
+#scrollImage{
+	position: absolute;
+	bottom: 10vh;
+	right: 20vh;
+	height: 25vh;
+}
+
+.indexBody{
+	top: 0px;
+	background-color: #2E3192;
+	font-family: Arial;
+	font: bold;
 }
