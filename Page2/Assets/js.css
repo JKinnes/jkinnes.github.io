@@ -1,0 +1,24 @@
+/* CSS Document */
+.JSRight{
+	float: right;
+	margin: 1vw;
+	padding-right: 25vw;
+	width: 350px;
+}
+
+.JSLeft{
+	float: left;
+	margin: 1vw;
+	padding-left: 25vw;
+	width: 350px;
+}
+
+.jsBody{
+	background-color: #2E3192;
+	font-family: Arial;
+	font: bold;
+}
+
+.welcomeH1{
+	padding-top: 4vh;
+}

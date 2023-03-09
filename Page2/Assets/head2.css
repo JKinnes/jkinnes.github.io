@@ -13,13 +13,13 @@
 	width: 100%;
 	font-size: 16pt;
 	margin: 0px;
-	height: 2em;
+	height: 4.5vh;
 	padding: 0px;
 }
 
 .headerTable{
 	width: 20%;
-	height: 2em;
+	height: 4.5vh;
 	display: inline-table;
 	font-color: #ffffff;
 }
