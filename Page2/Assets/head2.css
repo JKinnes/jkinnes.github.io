@@ -13,13 +13,13 @@
 	width: 100%;
 	font-size: 16pt;
 	margin: 0px;
-	height: 6vh;
+	height: 4.5vh;
 	padding: 0px;
 }
 
 .headerTable{
 	width: 20%;
-	height: 6vh;
+	height: 4.5vh;
 	display: inline-table;
 	font-color: #ffffff;
 }
@@ -38,7 +38,7 @@
 }
 
 .headerLogo{
-	height: 1.5em;
+	height: 4.5vh;
 	margin-left: 0.25vw;
 	margin-right: 0.25vw;
 }
