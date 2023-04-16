@@ -9,6 +9,7 @@ const headerHTML = `
   <div class = "header-content">
   <nav>
     <ul class="menu">
+    <div class="menu-background"></div>
       <li class="dropdown">
           <a href="Main.html#services" class="menu-item dropdown-header">Home</a>
     
