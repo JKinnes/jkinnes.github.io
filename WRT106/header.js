@@ -48,7 +48,7 @@ const headerHTML = `
             </ul>
           </li>
           <li class="dropdown">
-            <a href="Contact.html#services" class="menu-item dropdown-header">Contact</a>
+            <a href="Contact.html#services" class="menu-item dropdown-header">Regulations</a>
           
             <ul class="submenu dropdown-submenu">
               <li class="menu-item first-submenu-item"><a href="#service1">Section 1</a></li>

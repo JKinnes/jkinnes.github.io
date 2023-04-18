@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Trawling</title>
+
+  <link rel="stylesheet" href="Styles.css">
+
+  <script src="header.js"></script>
+
+</head>
+
+<div class="fish-container">
+    <div class="fish fish-small"></div>
+    <div class="fish fish-medium"></div>
+    <div class="fish fish-large"></div>
+    <div class="fish fish-small"></div>
+    <div class="fish fish-medium"></div>
+    <div class="fish fish-large"></div>
+    <div class="fish fish-small"></div>
+    <div class="fish fish-medium"></div>
+    <div class="fish fish-large"></div>
+  </div>
+
+  <script src="fish.js"></script>
+
+<body>
+    <div id = "header-placeholder"></div>
+
+  <main>
+
+    <div class="content">
+        <div class="sub-header">
+          <h2>Trawl Survey</h2>
+        </div>
+        <div class="columns">
+          <div class="column-left">
+            <p>"The Uri Trawl Survey is the longest continued record of trawl data collected over the past 60+ years. The survey highlights one of the positive sides of trawl fishing in a safe and minimally invasive environment. The information is gathered and stored in an easily accessible database and shows that trawl fishing can be done without heavily harming the environment. The URI Graduate program in hand with the school and bay authority records over 28 different species of fish and 12 different invertebrates living in Rhode Island waters to measure abundance and biomass of all fish and invertebrate species; surface and bottom temperature, dissolved oxygen, and salinity. These records are extremely important as the identification of these various habitat changes can be useful in preventing the mortality of specific fish species and help scientists preserve these species of fish."</p>
+          </div>
+          <div class="column-right">
+            <div class="image-container">
+              <img src="https://www.alisonsmontessori.com/v/vspfiles/photos/SC436-2.jpg?v-cache=1662037748" class="image">
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </main>
+</body>
+
+</html>
