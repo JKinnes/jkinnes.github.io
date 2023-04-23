@@ -40,7 +40,7 @@ const headerHTML = `
           </ul>
         </li>
         <li class="dropdown">
-            <a href="About.html#services" class="menu-item dropdown-header">Trawl Survey</a>
+            <a href="TrawlSurvey.html#services" class="menu-item dropdown-header">Trawl Survey</a>
           
             <ul class="submenu dropdown-submenu">
               <li class="menu-item first-submenu-item"><a href="#service1">Mortality Rates</a></li>
@@ -55,6 +55,14 @@ const headerHTML = `
               <li class="menu-item"><a href="#service2">Section 2</a></li>
             </ul>
           </li>
+          <li class="dropdown">
+          <a href="WayForward.html#services" class="menu-item dropdown-header">A Way Forward</a>
+        
+          <ul class="submenu dropdown-submenu">
+            <li class="menu-item first-submenu-item"><a href="#service1">Section 1</a></li>
+            <li class="menu-item"><a href="#service2">Section 2</a></li>
+          </ul>
+        </li>
           <li class="dropdown">
             <a href="WorkCited.html#services" class="menu-item dropdown-header">Work cited</a>
           
