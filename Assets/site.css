@@ -13,3 +13,8 @@ body{
 a {
 	color: inherit;
 }
+
+.final{
+	margin: auto;
+	padding-left: 200px;
+}
