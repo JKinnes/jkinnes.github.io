@@ -1,0 +1,849 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		CSC106 Final
+	</title>
+	<link rel = "stylesheet" href = "Assets/site.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.0/processing.min.js"></script>
+</head>
+
+<body>
+	<canvas id="finalCanvas"></canvas>
+	
+	<script>
+  		var sketch = function(processing) {
+			var drawNeck = function (bitX, bitY, bitSize){
+noStroke();
+fill(41, 41, 41); // Dark Gray
+    ellipse(bitX+bitSize/146*3, bitY+bitSize/146*10, bitSize/146*54, bitSize/146*19); // Top Shoulders
+    arc(bitX+bitSize/146*3, bitY+bitSize/146*14, bitSize/146*80, bitSize/146*24, 180, 360); // Upper Shoulders
+fill(255, 217, 156); // Skin Tone
+stroke(0, 0, 0); // Black
+strokeWeight(bitSize/146*2);
+    arc(bitX+bitSize/146*3, bitY+bitSize/146*1, bitSize/146*22, bitSize/146*12, 15, 165); // Collar
+noStroke();
+fill(255, 217, 156); // Skin Tone
+    rect(bitX-bitSize/146*2, bitY-bitSize/146*8, bitSize/146*10, bitSize/146*10); // Neck
+};
+			var drawHead = function(bitX, bitY, bitSize){
+noStroke();
+fill(255, 217, 156); // Skin Tone
+    ellipse(bitX+bitSize/146*3, bitY-bitSize/146*33, bitSize/146*50, bitSize/146*60); // Head
+fill(255, 255, 255); // White
+    ellipse(bitX-bitSize/146*7, bitY-bitSize/146*41, bitSize/146*8, bitSize/146*8); // LEye
+    ellipse(bitX+bitSize/146*13, bitY-bitSize/146*41, bitSize/146*8, bitSize/146*8); // REye
+fill(0, 157, 255); // Blue
+    ellipse(bitX-bitSize/146*6, bitY-bitSize/146*40, bitSize/146*5, bitSize/146*5); // LIris
+    ellipse(bitX+bitSize/146*14, bitY-bitSize/146*40, bitSize/146*5, bitSize/146*5); // RIris
+fill(0, 0, 0); // Black
+    ellipse(bitX-bitSize/146*6, bitY-bitSize/146*40, bitSize/146*3, bitSize/146*3); // LPupil
+    ellipse(bitX+bitSize/146*14, bitY-bitSize/146*40, bitSize/146*3, bitSize/146*3); // RPupil
+fill(115, 48, 0); // Brown
+    ellipse(bitX+bitSize/146*3, bitY-bitSize/146*17, bitSize/146*37, bitSize/146*25); // Beard
+    arc(bitX+bitSize/146*3, bitY-bitSize/146*28, bitSize/146*47, bitSize/146*51, 15, 165); // Beard Corners
+fill(255, 217, 156); // Skin Tone
+    ellipse(bitX+bitSize/146*3, bitY-bitSize/146*17, bitSize/146*19, bitSize/146*7); // Mouth Skin
+stroke(245, 122, 122); // Pink
+strokeWeight(bitSize/146*2);
+noFill();
+    arc(bitX+bitSize/146*3, bitY-bitSize/146*18, bitSize/146*15, bitSize/146*5, 30, 150); // Mouth
+fill(255, 217, 156); // Skin Tone
+stroke(0, 0, 0); // Black
+strokeWeight(bitSize/146*1);
+    triangle(bitX+bitSize/146*3, bitY-bitSize/146*36, bitX+bitSize/146*3, bitY-bitSize/146*32, bitX+bitSize/146*8, bitY-bitSize/146*32); // Nose Outline
+noStroke();
+    triangle(bitX+bitSize/146*1, bitY-bitSize/146*38, bitX+bitSize/146*1, bitY-bitSize/146*32, bitX+bitSize/146*6, bitY-bitSize/146*32); // Nose Line Cover
+};
+			var drawHat = function(bitX, bitY, bitSize){
+fill(41, 41, 41); // Dark Gray
+    arc(bitX+bitSize/146*3, bitY-bitSize/146*48, bitSize/146*48, bitSize/146*50, 180, 359); // Hat
+fill(255, 217, 156); // Skin Tone
+    arc(bitX+bitSize/146*3, bitY-bitSize/146*47, bitSize/146*40, bitSize/146*18, 180, 359); // Forehead
+fill(69, 92, 0); // Olive Green
+    rect(bitX-bitSize/146*5, bitY-bitSize/146*67, bitSize/146*16, bitSize/146*7); // HatFlag
+fill(41, 41, 41); // Dark Gray
+    rect(bitX-bitSize/146*4, bitY-bitSize/146*66, bitSize/146*7, bitSize/146*3); // HatFlag Corner
+noFill();
+stroke(0, 0, 0); // Black
+strokeWeight(bitSize/146*5);
+    arc(bitX+bitSize/146*3, bitY-bitSize/146*47, bitSize/146*40, bitSize/146*18, 200, 340); // Hat Brim
+noStroke();
+};
+			var drawBody = function(bitX, bitY, bitSize){
+fill(41, 41, 41); // Dark Gray
+    ellipse(bitX-bitSize/146*22, bitY+bitSize/146*22, bitSize/146*25, bitSize/146*30); // Left Shoulder
+    ellipse(bitX+bitSize/146*28, bitY+bitSize/146*22, bitSize/146*25, bitSize/146*30); // Right Shoulder
+    rect(bitX-bitSize/146*34, bitY+bitSize/146*18, bitSize/146*74, bitSize/146*55); // Body
+fill(31, 31, 31);
+    rect(bitX-bitSize/146*11, bitY+bitSize/146*21, bitSize/146*30, bitSize/146*20); // Logo Stroke
+fill(41, 41, 41);
+    rect(bitX-bitSize/146*7, bitY+bitSize/146*25, bitSize/146*22, bitSize/146*20); // Logo Fill
+fill(31, 31, 31);
+    rect(bitX+bitSize/146*2, bitY+bitSize/146*27, bitSize/146*4, bitSize/146*10); // Logo Left Inside
+    rect(bitX+bitSize/146*9, bitY+bitSize/146*27, bitSize/146*4, bitSize/146*10); // Logo Right Inside
+fill(255, 255, 255);
+textSize(bitSize/146*15);
+    text("JK", bitX+bitSize/146*2, bitY+bitSize/146*17, bitSize/146*60, bitSize/146*60);
+};
+			var drawArmR = function(bitX, bitY, bitSize){
+fill(255, 217, 156); // Skin Tone
+stroke(0, 0, 0); // Black
+strokeWeight(bitSize/146*2);
+    ellipse(bitX-bitSize/146*29, bitY+bitSize/146*22, bitSize/146*20, bitSize/146*12); // Right Shoulder
+    rect(bitX-bitSize/146*39, bitY+bitSize/146*21, bitSize/146*20, bitSize/146*31); // Right Arm
+    ellipse(bitX-bitSize/146*29, bitY+bitSize/146*52, bitSize/146*20, bitSize/146*12); // Right Elbow
+    rect(bitX-bitSize/146*29, bitY+bitSize/146*38, bitSize/146*45, bitSize/146*20); // Right Forearm
+fill(255, 217, 156); // Skin Tone
+noStroke();
+    ellipse(bitX-bitSize/146*29, bitY+bitSize/146*22, bitSize/146*20, bitSize/146*12); // Right Shoulder
+    rect(bitX-bitSize/146*39, bitY+bitSize/146*21, bitSize/146*20, bitSize/146*31); // Right Arm
+    ellipse(bitX-bitSize/146*29, bitY+bitSize/146*52, bitSize/146*20, bitSize/146*12); // Right Elbow
+    rect(bitX-bitSize/146*29, bitY+bitSize/146*38, bitSize/146*45, bitSize/146*20); // Right Forearm
+fill(41, 41, 41); // Dark Gray
+    ellipse(bitX-bitSize/146*28, bitY+bitSize/146*19, bitSize/146*24, bitSize/146*22); // Right Shoulder
+    rect(bitX-bitSize/146*39, bitY+bitSize/146*22, bitSize/146*20, bitSize/146*9); // Right Sleeve
+};
+			var drawArmL = function(bitX, bitY, bitSize){
+fill(255, 217, 156); // Skin Tone
+stroke(0, 0, 0); // Black
+strokeWeight(bitSize/146*2);
+    ellipse(bitX+bitSize/146*35, bitY+bitSize/146*22, bitSize/146*20, bitSize/146*12); // Left Shoulder
+    rect(bitX+bitSize/146*25, bitY+bitSize/146*21, bitSize/146*20, bitSize/146*31); // Left Arm
+    ellipse(bitX+bitSize/146*35, bitY+bitSize/146*52, bitSize/146*20, bitSize/146*12); // Left Elbow
+    rect(bitX-bitSize/146*10, bitY+bitSize/146*38, bitSize/146*45, bitSize/146*20); // Left Forearm
+    ellipse(bitX-bitSize/146*10, bitY+bitSize/146*48, bitSize/146*20, bitSize/146*22); // Left Hand
+noStroke();
+    ellipse(bitX+bitSize/146*35, bitY+bitSize/146*22, bitSize/146*20, bitSize/146*12); // Left Shoulder
+    rect(bitX+bitSize/146*25, bitY+bitSize/146*21, bitSize/146*20, bitSize/146*31); // Left Arm
+    ellipse(bitX+bitSize/146*35, bitY+bitSize/146*52, bitSize/146*20, bitSize/146*12); // Left Elbow
+    rect(bitX-bitSize/146*10, bitY+bitSize/146*38, bitSize/146*45, bitSize/146*20); // Left Forearm
+    ellipse(bitX-bitSize/146*10, bitY+bitSize/146*48, bitSize/146*20, bitSize/146*22); // Left Hand
+fill(41, 41, 41); // Dark Gray
+    ellipse(bitX+bitSize/146*34, bitY+bitSize/146*20, bitSize/146*24, bitSize/146*22); // Left Shoulder
+    rect(bitX+bitSize/146*25, bitY+bitSize/146*22, bitSize/146*20, bitSize/146*9); // Left Sleeve
+};
+			var drawKinnesBitmojiBody = function(bitX, bitY, bitSize){
+    drawBody(bitX, bitY, bitSize);
+    drawArmR(bitX, bitY, bitSize);
+    drawArmL(bitX, bitY, bitSize);
+};
+			var drawKinnesBitmojiHead = function(bitX, bitY, bitSize){
+    drawNeck(bitX, bitY, bitSize);
+    drawHead(bitX, bitY, bitSize);
+    drawHat(bitX, bitY, bitSize);
+};
+			var drawKinnesBitmoji = function(bitX, bitY, bitSize){
+    drawKinnesBitmojiHead(bitX, bitY, bitSize);
+    drawKinnesBitmojiBody(bitX, bitY, bitSize);
+};
+			var drawBitmojiHead = function(bitmojiX, bitmojiY, h){
+    noStroke();
+    fill(255,224,189); //face fill
+    ellipse(bitmojiX,bitmojiY+(3*h/100),82*h/100,h); //head
+    fill(255, 255, 255); //cutout fill
+};
+			var drawBitmojiEyes = function(bitmojiX, bitmojiY, h){
+    noStroke();
+    fill(255, 255, 255); //eyewhite
+    ellipse(bitmojiX-(12*h/100),bitmojiY,14*h/100,7*h/100); //left eyewhite
+    ellipse(bitmojiX+(14*h/100),bitmojiY,14*h/100,7*h/100); //right eyewhite
+    fill(124, 150, 237); //eye color 
+    ellipse(bitmojiX-(12*h/100),bitmojiY,8*h/100,7*h/100); // left iris
+    ellipse(bitmojiX+(14*h/100),bitmojiY,8*h/100,7*h/100); // right pupil
+    fill(0, 0, 0); //pupil color
+    ellipse(bitmojiX-(12*h/100),bitmojiY,3*h/100,3*h/100); //left pupil
+    ellipse(bitmojiX+(14*h/100),bitmojiY,3*h/100,3*h/100); //right pupil
+};
+			var drawBitmojiFeatures = function(bitmojiX, bitmojiY, h){    
+    fill(255,224,189); //eyebrow fill
+    stroke(150, 114, 78); //eyebrow color
+    arc(bitmojiX+(13*h/100),bitmojiY-(6*h/100),17*h/100,-7*h/100,3,180);      //right eyebrow
+    arc(bitmojiX-(12*h/100),bitmojiY-(6*h/100),17*h/100,-7*h/100,3,180);      //left eyebrow
+    fill(255,224,189); //nose fill
+    stroke(0, 0, 0); //nose outline
+    bezier(bitmojiX,bitmojiY+(3*h/100),bitmojiX+(17*h/100),bitmojiY+(22*h/100),bitmojiX-(3*h/100),bitmojiY+(17*h/100),bitmojiX-(3*h/100),bitmojiY+(20*h/100)); //nose
+    fill(255, 255, 255); //mouth fill
+    stroke(184, 55, 55); //lip color
+    arc(bitmojiX+(2*h/100),bitmojiY+(29*h/100),23*h/100,10+h/100,1,180); //lower lip
+    line(bitmojiX-(11*h/100),bitmojiY+(28*h/100),bitmojiX+(14*h/100),bitmojiY+(28*h/100)); //upper lip
+};
+			var drawBitmojiHair = function(bitmojiX, bitmojiY, h){
+    noStroke();
+    fill(150, 114, 78); //hair color fill
+    quad(bitmojiX-(47*h/100),bitmojiY+(13*h/100),bitmojiX-(35*h/100),bitmojiY-(36*h/100),bitmojiX-(10*h/100),bitmojiY-(47*h/100),bitmojiX-(35*h/100),bitmojiY+(60*h/100)); //left side hair
+    quad(bitmojiX+(47*h/100),bitmojiY+(13*h/100),bitmojiX+(37*h/100),bitmojiY-(35*h/100),bitmojiX+(10*h/100),bitmojiY-(47*h/100),bitmojiX+(35*h/100),bitmojiY+(60*h/100)); //right side hair
+    ellipse(bitmojiX,bitmojiY-(34*h/100),58*h/100,26*h/100); //top hair
+    arc(bitmojiX-(19*h/100),bitmojiY-(33*h/100),51*h/100,42*h/100,-43,100); //left part
+    arc(bitmojiX+(27*h/100),bitmojiY-(30*h/100),53*h/100,39*h/100,59,184);     //right part
+    quad(bitmojiX-(55*h/100),bitmojiY+(70*h/100),bitmojiX-(47*h/100),bitmojiY+(17*h/100),bitmojiX-(28*h/100),bitmojiY+(10*h/100),bitmojiX-(23*h/100),bitmojiY+(84*h/100)); //left hair
+    quad(bitmojiX+(55*h/100),bitmojiY+(70*h/100),bitmojiX+(47*h/100),bitmojiY+(17*h/100),bitmojiX+(28*h/100),bitmojiY+(1*h/100),bitmojiX+(23*h/100),bitmojiY+(84*h/100));     //right hair
+};
+			var drawBitmojiHeadband = function(bitmojiX, bitmojiY, h){
+    fill(150, 114, 78); //inside headband color
+    strokeWeight(4); //headband weight
+    stroke(102, 77, 214); //headband color
+    arc(bitmojiX+(1*h/100),bitmojiY-(21*h/100),58*h/100,33*h/100,180,360);     //headband
+    fill(102, 77, 214); //bow color
+    ellipse(bitmojiX-(10*h/100),bitmojiY-(33*h/100),12*h/100,8*h/100); //right petal
+    ellipse(bitmojiX-(20*h/100),bitmojiY-(37*h/100),12*h/100,8*h/100); //left petal
+    strokeWeight(1);
+};
+			var drawBitmojiBody = function(bitmojiX, bitmojiY, h){
+ noStroke();
+    fill(255,224,189); //neck fill
+    rect(bitmojiX-(20*h/100),bitmojiY+(46*h/100),50*h/100,30*h/100); // neck
+    fill(255, 255, 255); //neck cutout fill
+    ellipse(bitmojiX-(22*h/100),bitmojiY+(65*h/100),15*h/100,35*h/100); //left neck
+    ellipse(bitmojiX+(23*h/100),bitmojiY+(61*h/100),16*h/100,35*h/100); //right neck
+    fill(247, 198, 235); //shirt color
+    rect(bitmojiX-(58*h/100),bitmojiY+(63*h/100),111*h/100,40*h/100); //shirt
+    fill(255,224,189); //vneck fill
+    triangle(bitmojiX-(35*h/100),bitmojiY+(63*h/100),bitmojiX+(35*h/100),bitmojiY+(63*h/100),bitmojiX-(2*h/100),bitmojiY+(100*h/100)); //vneck
+    fill(255, 255, 255);
+    textSize(23*h/100);
+    text("CT",bitmojiX-(50*h/100),bitmojiY+(79*h/100));
+};
+			var drawBitmojiNecklace = function(bitmojiX, bitmojiY, h){
+    stroke(192,192,192); //chain color
+    line(bitmojiX-(24*h/100),bitmojiY+(63*h/100),bitmojiX-(2*h/100),bitmojiY+(90*h/100)); //left necklace
+    line(bitmojiX+(20*h/100),bitmojiY+(63*h/100),bitmojiX-(2*h/100),bitmojiY+(90*h/100)); //right necklace
+    fill(192, 192, 192); //necklace color
+    triangle(bitmojiX-(4*h/100),bitmojiY+(90*h/100),bitmojiX,bitmojiY+(90*h/100),bitmojiX-(2*h/100),bitmojiY+(100*h/100)); //necklace charm
+};
+			var drawTworekBitmoji = function (bitmojiX, bitmojiY, h){
+    drawBitmojiBody(bitmojiX, bitmojiY, h);
+    drawBitmojiHead(bitmojiX, bitmojiY, h);
+    drawBitmojiEyes(bitmojiX, bitmojiY, h);
+    drawBitmojiFeatures(bitmojiX, bitmojiY, h);
+    drawBitmojiNecklace(bitmojiX, bitmojiY, h);
+    drawBitmojiHair(bitmojiX, bitmojiY, h);
+    drawBitmojiHeadband(bitmojiX, bitmojiY, h);
+};
+
+			var currentScene = 0;
+			var answerWords = ["VARIABLE", "ARRAY", "COMMENT", "CONDITIONAL", "BOOLEAN"];
+			var wordImages = [getImage("Assets/finalImages/mr-pants.png"), getImage("Assets/finalImages/old-spice-man.png"), getImage("Assets/finalImages/mr-pink-orange.png"), getImage("Assets/finalImages/spunky-sam-red.png"), getImage("Assets/finalImages/Hopper-Jumping.png")];
+			var selectedField;
+			var pageFields = [];
+			var wordFields = [];
+			var popUp = false;
+			var sceneSave = 0;
+			
+			var Button = function(config) {
+    this.x = config.x || 0;
+    this.y = config.y || 0;
+    this.width = config.width || 150;
+    this.height = config.height || 50;
+    this.label = config.label || "Click";
+    this.onClick = config.onClick || function() {};
+};
+			Button.prototype.draw = function() {
+    fill(255, 195, 43);
+    rect(this.x, this.y, this.width, this.height, 5);
+    fill(0, 0, 0);
+    textSize(19);
+    textAlign(LEFT, TOP);
+    text(this.label, this.x+10, this.y+this.height/4);
+};
+			Button.prototype.isMouseInside = function() {
+    return mouseX > this.x &&
+           mouseX < (this.x + this.width) &&
+           mouseY > this.y &&
+           mouseY < (this.y + this.height);
+};
+			Button.prototype.handleMouseClick = function() {
+    if (this.isMouseInside()) {
+        this.onClick();
+    }
+};
+			Button.prototype.setScene = function() {
+   if(currentScene === 1){
+       currentScene = this.scene;
+   } else if (currentScene === this.scene){
+       currentScene = 1;
+   }
+};
+			
+			var startButton = new Button({
+    x: 84,
+    y: 264,
+    width: 85,
+    height: 37,
+    label: "START",
+    onClick: function() {
+        currentScene = 1;
+    }
+});
+			var helpButton = new Button({
+    x: 250,
+    y: 264,
+    width: 85,
+    height: 37,
+    label: "HELP",
+    onClick: function() {
+        //moves to the help screen when clicked
+        currentScene = 2;
+        //stores the homeScreen 
+        sceneSave = 0;
+    }
+});
+			var helpButton2 = new Button({
+    x: 166,
+    y: 358,
+    width: 85,
+    height: 37,
+    label: "HELP",
+    onClick: function() {
+        //moves to the help screen when clicked
+        currentScene = 2;
+        //stores the wordScene
+        sceneSave = 1;
+    }
+});
+			var returnButton = new Button({
+    x: 257,
+    y: 359,
+    width: 102,
+    height: 35,
+    label: "GO BACK",
+    onClick: function() {
+        if(currentScene === 2){
+            currentScene = sceneSave;
+        }else{
+            currentScene = 1;
+        }
+    }
+});
+			
+			var againButton = new Button({
+    x: 150,
+    y: 215,
+    width: 100,
+    height: 35,
+    label: "Try Again",
+    onClick: function() {
+        //pop-up disappears 
+        popUp = false;
+    }
+});
+			var letterSelect = function(){
+    //Define array of all characters that can be typed
+    var characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", " ", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    //Check if the key pressed was a letter
+    for (var i = 48; i <= 57; i++){
+        if (keyCode === i){
+            //return the letter pressed
+            return characters[i-21];
+        }
+    }
+    //Check if the key pressed was a number
+    for (var i = 65; i <= 90; i++){
+        if (keyCode === i){
+            //return the number pressed
+            return characters[i-65];
+        }
+    }
+    //Check if the key pressed was the spacebar
+    if (keyCode === 32){
+        //return a space
+        return characters[26];
+    }
+    //Otherwise, return empty string
+    return "";
+};
+			var drawCheck = function(x, y){
+    strokeWeight(5);
+    line(x, y, x + 15, y + 15);
+    line(x + 15, y + 15, x + 35, y - 25);
+    strokeWeight(1);
+};
+			var drawArrow = function(x, y, w, h){
+    strokeWeight(5);
+    fill(255, 195, 43);
+    rect(x + w*0.1, y + h/4, w/2, h/2);
+    triangle(x + w/2, y+h*0.1, x + w/2 , y+h*0.9, x+w*0.9, y+h/2);
+    noStroke();
+    rect(x + w*0.2, y + h/3.2, w/2.75, h/2.5);
+    strokeWeight(1);
+    
+};
+			var ticker = function(){
+    //Swap return between true and false every 3/4 of a second
+    if((round(millis() / 750) % 2) === 0) {
+        return true;
+    } else {
+        return false;
+    }
+};
+			
+			var Field = function(x, y, width, height, word, image, scene){
+    //Define coordinate and size related variables
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+    //Define the image relating to the field. If no image, set to 0
+    this.image = image || 0;
+    //Define properties to track what has been typed into the field and the correct answer
+    this.text = "";
+    this.answer = word;
+    //Define color to fill field
+    this.color = color(255, 255, 255);
+    //Define parameters to track if Field is correct/complete
+    //this.correct = true when this.text === this.answer
+    this.correct = false;
+    //this.complete = true when the answer is correct AND the page the field leads to is complete
+    this.complete = false;
+    //Create a button object specific to each field
+    this.button = new Button({
+        x: 0,
+        y: 0,
+        width: 50,
+        height: 50,
+        label: " ",
+        onClick: function() {
+            if(wordFields[this.scene-3].correct){
+                this.setScene();
+            }
+        }
+    });
+    //Define scene parameter of the Field Button. If no value entered, set to 0
+    this.button.scene = scene || 0;
+};
+			Field.prototype.draw = function() {
+    //Fill green if the Field is marked complete
+    if (this.complete){
+        fill(70, 252, 38);
+    //Color Field pink if mouse is hovering ofer it
+    }else if (this.isMouseInside() && selectedField !== this){
+        fill(250, 160, 160);
+    }else{
+        fill(this.color);
+    }
+    stroke(0, 0, 0);
+    rect(this.x, this.y, this.width, this.height, 5);
+    //Draw image and button only if on the wordScene
+    if(currentScene === 1){
+        image(this.image, this.x - this.width * 0.3, this.y, this.height, this.height);
+        this.button.x = this.x + this.width *1.05;
+        this.button.y = this.y;
+        this.button.draw();
+        if(this.complete){
+            drawCheck(this.x + this.width * 1.09, this.y + this.height/1.65);
+        } else {
+            drawArrow(this.button.x, this.button.y, this.button.width, this.button.height);
+        }
+    }
+    fill(0, 0, 0);
+        //Utilize ticker() to add blinking line at end of this.text
+    if(ticker() && (selectedField === this)){
+        text(this.text + "|", this.x, this.y, this.width, this.height);
+    } else {
+        text(this.text, this.x, this.y, this.width, this.height);
+    }
+};
+			Field.prototype.keyPress = function(){
+    //Add return from letterSelect() to end of this.text
+    this.text += letterSelect();
+    //If packspace was pressed, remove the last character from this.text
+    if(keyCode === 8){
+        this.text = this.text.slice(0, -1);
+    }
+};
+			Field.prototype.isMouseInside = function() {
+    return mouseX > this.x &&
+           mouseX < (this.x + this.width) &&
+           mouseY > this.y &&
+           mouseY < (this.y + this.height);
+};
+			Field.prototype.checkCorrect = function(){
+    if(this.answer === this.text){
+        this.correct = true;
+        return true;
+    }
+};
+			
+			var variableWord;
+			var arrayWord;
+			var commentWord;
+			var conditionalWord;
+			var booleanWord;
+			wordFields = [variableWord, arrayWord, commentWord, conditionalWord, booleanWord];
+			
+			for (var i = 0; i < wordFields.length; i++){
+    wordFields[i] = new Field(90, (69*i+25), 200, 50, answerWords[i], wordImages[i], (i+3));
+}
+			
+			var drawPopUp = function(){
+    strokeWeight(2);
+    stroke(0, 0, 0);
+    fill(255, 255, 255);
+    rect(100, 118, 200, 150);
+    fill(0, 0, 0);
+    text("That wasn't quite right!", 153, 145, 120, 100);
+    strokeWeight(1);
+    againButton.draw();
+};
+			
+			var submitButton = new Button({
+    x: 70, 
+    y: 359,
+    width: 102,
+    height: 35,
+    label: "SUBMIT",
+    onClick: function() {
+        //Check if all fields on page are correct. If so, set the respective Field.complete = true
+        if(pageFields[0].correct){
+            wordFields[currentScene - 3].complete = true;
+            currentScene = 1;
+        //Otherwise, display the "Try Again" pop up
+        } else {
+            popUp = true;
+        }
+    }
+});
+			
+			var variablesQuestion = new Field(222, 276, 111, 30, "22");
+			var arraysQuestion = new Field(182, 317, 191, 35, "FOOTBALL");
+			var commentsQuestion = new Field(51, 308, 171, 25, "BEGIN");
+			var conditionalsQuestion = new Field(182, 317, 191, 35, "WHOOPS BETTER LUCK NEXT TIME");
+			var booleansQuestion = new Field(305, 286, 80, 25, "FALSE");
+			
+			
+			var splashScene = function() {
+    background(84, 156, 130);
+    //call bitmojis
+    drawTworekBitmoji(50, 29, 50);
+    drawKinnesBitmoji(345, 47, 80);
+    //title
+    fill(255, 255, 255);
+    textSize(22);
+    text("Scavenge for Code!", 109, 103, 200, 200);
+    textSize(10);
+    text("By Chloe Tworek", 162, 136, 100, 100);
+    text("and Joshua Kinnes", 158, 148, 100, 100);
+    image(getImage("Assets/finalImages/ChestClosed.png"), 164, 156, 75, 75);
+    //call button draw methods
+    startButton.draw();
+    helpButton.draw();
+};
+			var helpScene = function(){
+    background(255, 115, 0);
+    //call button draw method
+    returnButton.draw();
+    //title
+    textSize(30);
+    text("HOW TO PLAY", 100, 25, 250, 100);
+    stroke(0, 0, 0);
+    //step-by-step instructions
+    line(25, 65, 375, 65);
+    textSize(15);
+    text("1. Hit START and pay attention to the 5 images shown on screen.", 40, 80, 325, 100);
+    text("2. Walk around the union and find the 5 posters with the images and words.", 40, 129, 325, 100);
+    text("3. When you find a poster, type the word in next to the image and hit the arrow button.", 40, 178, 325, 100);
+    text("4. Answer the question on screen and hit SUBMIT", 40, 226, 339, 100);
+    text("5. Once you've answered all the questions, come back to the table and show us all 5 check marks for a prize!", 40, 255, 339, 100);
+    //call bitmojis
+    drawTworekBitmoji(79, 347, 45);
+    drawKinnesBitmoji(152, 355, 75);
+};
+			var wordScene = function(){
+    background(123, 171, 227);
+    //call bitmojis
+    drawTworekBitmoji(376, 24, 36);
+    drawKinnesBitmoji(373, 346, 73);
+    //place fields
+    pageFields = wordFields;
+    for(var i = 0; i < wordFields.length; i++){
+        wordFields[i].draw(); //wordField drawn for each index of array
+    }
+    var allCorrect = 0; //initial variable for number of correctly answered
+    for (var i = 0; i < pageFields.length; i++){
+        if (pageFields[i].complete){
+            allCorrect++; //add one to total correct answers
+        }
+    }
+    if (allCorrect === pageFields.length){
+        currentScene = 8; //change to end scene if allCorrect variable equals number of fields
+    }
+    //call button draw method
+    helpButton2.draw();
+};
+			var variablesScene = function(){
+    //define pageFields array elements for this scene
+    pageFields = [variablesQuestion];
+    background(242, 162, 162);
+    //title
+    textSize(20);
+    fill(214, 64, 64);
+    text("What are variables?", 36, 20, 200, 200);
+    fill(255, 222, 209);
+    rect(34, 46, 182, 5);
+    //call button draw methods
+    returnButton.draw();
+    submitButton.draw();
+    //brief definition
+    fill(156, 76, 114);
+    textSize(13);
+    text("These allow you to store a value under a certain name, which can then be changed as you move through your code. It is written as var _____ = _____;", 50, 66, 321, 200);
+    text("So, instead of referencing a hard coded number, you can just use the name of the variable.", 50, 130, 213, 200);
+    image(wordImages[0], 283, 118, 70, 70);
+    //question
+    textSize(18);
+    fill(214, 64, 64);
+    text("Practice!", 33, 193, 198, 200);
+    textSize(12);
+    fill(156, 76, 114);
+    text('Given the following lines of code, what would the value of "sum" be?', 33, 228, 297, 200);
+    fill(122, 12, 12);
+    image(getImage("Assets/finalImages/plus.png"), 156, 263, 20, 20);
+    image(getImage("Assets/finalImages/minus.png"), 174, 284, 20, 20);
+    image(getImage("Assets/finalImages/questionmark.png"), 181, 269, 20, 20);
+    text("var x = 9;", 55, 268, 198, 200);
+    text("var y = 13;", 55, 286, 198, 200);
+    text("var sum = x + y;", 55, 304, 198, 200);
+    //draw the text fields
+    variablesQuestion.draw();
+    //correct answer = 22
+};
+			var arraysScene = function(){
+    //define pageFields array elements for this scene
+    pageFields = [arraysQuestion];
+    background(26, 0, 255);
+    image(getImage("Assets/finalImages/questionmark.png"), 334, 20, 50, 58);
+    image(getImage("Assets/finalImages/avatar-team.png"), 321, 212, 63, 45);
+    //title
+    textSize(20);
+    fill(99, 237, 223);
+    text("What is an array?", 36, 20, 200, 200);
+    fill(255, 255, 255);
+    rect(34, 46, 161, 5);
+    //call button draw methods
+    returnButton.draw();
+    submitButton.draw();
+    //brief definition
+    fill(99, 237, 223);
+    textSize(13);
+    text("This is a set of data in coding that allows you to store many values and elements in just one variable. You can use it to group names, words, numbers, etc.", 50, 68, 282, 200);
+    fill(255, 255, 255);
+    text("When organized in this fashion, you will be able to pull out a specific value by referring to the index of the array it is located in. The indexes start at 0, for the first positon, and go up by 1 for each of the next values.", 28, 153, 361, 200);
+    //question
+    textSize(18);
+    fill(0, 255, 208);
+    text("Practice!", 65, 236, 198, 200);
+    image(wordImages[1], 7, 234, 50, 50);
+    textSize(12);
+    text("When looking at the given array, you decide to pull out the value at index 2... what would this be?", 66, 264, 271, 200);
+    fill(255, 255, 255);
+    text('var topSports = ["soccer", "fieldhockey", "football", "basketball"];', 19, 304, 191, 200);
+    //draw the text fields
+    arraysQuestion.draw();
+    //correct answer = football
+};
+			var commentsScene = function(){
+    //define pageFields array elements for this scene
+    pageFields = [commentsQuestion];
+    background(55, 255, 0);
+    //title
+    fill(0, 42, 196);
+    textSize(20);
+    text("What are comments?", 29, 20, 238, 200);
+    rect(29, 45, 191, 5);
+    //call button draw methods
+    returnButton.draw();
+    submitButton.draw();
+    //brief definition
+    textSize(13);
+    text("Comments are a way you can make your code readable for another user. You can write out a short explanation of that section of code to help others learn, add new features, or allow them to fix any bugs they find. ", 29, 68, 334, 200);
+    text('They should always start with two forward slashes, " // ". They can also be used to "comment out" a line of code. So, if those two slashes are present, that line of code will not run.', 88, 145, 302, 200);
+    image(wordImages[2], 26, 144, 56, 56);
+    image(getImage("Assets/finalImages/questionmark.png"), 269, 296, 50, 50);
+    //question
+    textSize(18);
+    fill(0, 106, 255);
+    text("Practice!", 29, 216, 200, 200);
+    fill(0, 42, 196);
+    textSize(12);
+    text("Based on the given code, with comments, what will be texted out on the screen?", 30, 246, 165, 200);
+    fill(0, 0, 0);
+    text('text("Begin", 50, 150, 200, 100)', 210, 261, 200, 100);
+    text('//text("Paused", 50, 150, 200, 100)', 210, 278, 200, 100);
+    text('//text("Restart", 50, 150, 200, 100)', 210, 244, 200, 100);
+    //draw the text fields
+    commentsQuestion.draw();
+    //correct answer = BEGIN
+};
+			var conditionalsScene = function(){
+    //define pageFields array elements for this scene
+    pageFields = [conditionalsQuestion];
+    background(77, 0, 255);
+    //title
+    fill(255, 255, 255);
+    textSize(20);
+    text("What are conditionals?", 29, 20, 238, 200);
+    fill(0, 255, 208);
+    rect(29, 45, 200, 5);
+    //call button draw methods
+    returnButton.draw();
+    submitButton.draw();
+    //brief definition
+    fill(255, 255, 255);
+    textSize(13);
+    text("Usually appearing as if/then statements, they tell the program when to run a specific line of code.", 61, 68, 264, 200);
+    //basic outline
+    text("So, IF one statement is true, then certain lines of code will run... ELSE a different line will run.", 61, 142, 200, 200);
+    //question
+    textSize(18);
+    fill(0, 255, 208);
+    text("Practice!", 29, 216, 200, 200);
+    image(wordImages[3], 286, 120, 56, 56);
+    image(getImage("Assets/finalImages/questionmark.png"), 45, 244, 50, 50);
+    textSize(12);
+    fill(255, 255, 255);
+    text("var x = 5;", 142, 219, 50, 50);
+    text("if (x > 7) {", 142, 235, 100, 50);
+    text('text("You Won!!");', 157, 253, 100, 50);
+    text("} else {", 142, 269, 100, 50);
+    text('text("Whoops better luck next time")', 157, 288, 200, 50);
+    text("}", 142, 305, 200, 50);
+    fill(0, 255, 208);
+    text("Which phrase is going to show on the screen?", 24, 320, 150, 50);
+    fill(255, 255, 255);
+    //draw the text fields
+    conditionalsQuestion.draw();
+    // correct answer = Whoops better luck next time
+};
+			var booleansScene = function(){
+    //define pageFields array elements for this scene
+    pageFields = [booleansQuestion];
+    background(255, 208, 0);
+    image(wordImages[4], 7, 197, 50, 50);
+    //call button draw methods
+    returnButton.draw();
+    submitButton.draw();
+    //title
+    fill(18, 86, 224);
+    textSize(20);
+    text("What is a boolean?", 18, 15, 200, 100);
+    rect(18, 42, 175, 5);
+    //brief definition
+    textSize(13);
+    fill(0, 0, 0);
+    text("These are a specific type of data in code that can only have one of two different values. TRUE or FALSE", 61, 56, 264, 200);
+    text("It's what we can use to evaluate expressions, like 5 < 7, and can come in useful when making comparisons. Directing the program to do one thing when the boolean is true, and maybe stopping this action when it is set to false.", 61, 119, 314, 200);
+    //question
+    textSize(20);
+    fill(0, 132, 255);
+    text("Practice!", 72, 224, 200, 200);
+    textSize(12);
+    fill(18, 86, 224);
+    text("At the start of your code, you set a global variable...", 24, 260, 200, 200);
+    text("var stillPlaying = true;", 44, 299, 200, 200);
+    text("What will you change that value to if you want the game to end?", 24, 320, 200, 200);
+    fill(0, 0, 0);
+    image(getImage("Assets/finalImages/star.png"), 217, 303, 50, 50);
+    text("stillPlaying =", 229, 291, 200, 200);
+    text(";", 386, 291, 200, 200);
+    fill(255, 255, 255);
+    //draw the text fields
+    booleansQuestion.draw();
+    //correct answer = false
+};
+			var endScene = function(){
+    background(247, 0, 255);
+    //center the text
+    textAlign(CENTER);
+    textSize(25);
+    fill(0, 255, 251);
+    text("CONGRATS!", 108, 50, 200, 200);
+    textSize(12);
+    fill(0, 0, 0);
+    text("You just succesfully completed a mini crash course about Javascript!", -3, 109, 414, 200);
+    text("Now that you know most of the basics, go out and have fun! Learn more and eventually you can start to code your own creations.", 97, 143, 222, 200);
+    fill(0, 51, 255);
+    textSize(15);
+    text("Come on back to our table and get your little prize!", 109, 269, 200, 200);
+    //realign the text back to the left side of the screen
+    textAlign(LEFT);
+    image(getImage("Assets/finalImages/Star.png"), 46, 274, 100, 100);
+    image(getImage("Assets/finalImages/Star.png"), 161, 294, 100, 100);
+    image(getImage("Assets/finalImages/Star.png"), 271, 274, 100, 100);
+};
+		
+			function setup(){
+        		processing.size(400, 400);
+          		processing.background(255, 255, 255);
+			};
+			
+			function draw() {
+    if(popUp){
+        drawPopUp();
+    } else if (currentScene === 0) {
+        splashScene();
+    } else if (currentScene === 1) {
+        wordScene();
+    } else if (currentScene === 2) {
+        helpScene();
+    } else if (currentScene === 3) {
+        variablesScene();
+    } else if (currentScene === 4) {
+        arraysScene();
+    } else if (currentScene === 5) {
+        commentsScene();
+    } else if (currentScene === 6) {
+        conditionalsScene();
+    } else if (currentScene === 7) {
+        booleansScene();
+    } else if (currentScene === 8) {
+        endScene();
+    }
+};
+			function mouseClicked() {
+    //Create local variable to track number of fields checked. Will be used to deselect fields in wordScene
+    var checkFields = 0;
+    //Utilize for loop to check fields for correctness and selection based on pageFields
+    for(var i = 0; i < pageFields.length; i++){
+        //Check Field for correctness
+        pageFields[i].checkCorrect();
+        //If mouse is inside Field being checked, change color to blue and set to selectedField
+        if(pageFields[i].isMouseInside()){
+            pageFields[i].color = color(74, 210, 255);
+            selectedField = pageFields[i];
+        //If mouse is not Field being checked, set color to white, and iterate checkFields
+        } else {
+            pageFields[i].color = color(255, 255, 255);
+            checkFields++;
+        }
+    }
+    //Check if 5 fields have been checked and not selected. If so, set selectedField to arbitrary integer
+    if (checkFields === 5){
+        selectedField = 0;
+    }
+    //Handle question scene button mouse clicks
+    againButton.handleMouseClick();
+    returnButton.handleMouseClick();
+    submitButton.handleMouseClick();
+    //Handle clicks relating to specific scenes
+    if (currentScene === 0) {
+        startButton.handleMouseClick();
+        helpButton.handleMouseClick();
+    } else if (currentScene === 1) {
+        for(var i = 0; i < wordFields.length; i++){
+            wordFields[i].button.handleMouseClick();
+        }
+        helpButton2.handleMouseClick();
+    }
+};
+			function keyPressed() {
+    			//Run the keyPress method on the currently selected Field
+    			selectedField.keyPress();
+			};
+
+  		};
+  		var canvas = document.getElementById("finalCanvas");
+  		var p = new Processing(finalCanvas, sketch);
+	</script>
+</body>
+</html>
