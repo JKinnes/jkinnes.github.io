@@ -9,7 +9,22 @@
 <body>
 	<div id = "bodyDiv">
 		<div class = "final">
-			<script src="https://www.khanacademy.org/computer-programming/csc106_final/5853880224366592/embed.js?editor=no&buttons=no&author=no&embed=yes"></script>
+			<div style = "margin: auto">
+				<script id = "finalrun" src="https://www.khanacademy.org/computer-programming/csc106_final/5853880224366592/embed.js?editor=no&buttons=no&author=no&embed=yes">
+				</script>
+			</div>
+			<br>
+			<input id = "ghostBox" type = "text" style = "color: white" autofocus>
+			</input>
+			<script>
+				var ghostInput = document.,getElementById("ghostBox");
+				ghostInput.addEventListener("blur", function(){
+					ghostInput.focus();
+				});
+			</script>
+			<p style = "text-align: center">
+				^^^ Click here for keyboard ^^^
+			</p>
 		</div>
 	</div>
 </body>
